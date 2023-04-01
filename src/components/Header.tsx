@@ -13,6 +13,7 @@ export default function Header() {
           </Link>
 
           <Link href={"/create"}>Create</Link>
+          <Link href={"/create"}>Create</Link>
         </div>
 
         <div className={styles.right}>
