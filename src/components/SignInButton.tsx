@@ -2,6 +2,7 @@ import {
   useAddress,
   useNetworkMismatch,
   useNetwork,
+  useActiveChain, useSwitchChain, useChainId,
   ConnectWallet,
   ChainId,
   MediaRenderer,
@@ -15,7 +16,7 @@ type Props = {};
 export default function SignInButton({}: Props) {
   const address = useAddress(); // Detect the connected address
   const isOnWrongNetwork = useNetworkMismatch(); // Detect if the user is on the wrong network
-  //const [, switchNetwork] = useNetwork(); // Function to switch the network.
+  //const [, switchNetwork] = useNetwork(); // Function to switch the network
   const { isSignedInQuery, profileQuery } = useLensUser();
   const { mutate: requestLogin } = useLogin();
 
@@ -24,14 +25,14 @@ export default function SignInButton({}: Props) {
     return <ConnectWallet />;
   }
 
-  // 2. User needs to switch network to Polygon
-  //if (isOnWrongNetwork) {
-    //return (
-      //<button onClick={() => switchNetwork?.(ChainId.Polygon)}>
-       // Switch Network
-      //</button>
-    //);
- // }
+   //2. User needs to switch network to Polygon
+  /*if (isOnWrongNetwork) {
+    return (
+      <button onClick={() => switchNetwork?.(ChainId.Polygon)}>
+      Switch Network
+      </button>
+    );
+  }*/
 
   // Loading their signed in state
   if (isSignedInQuery.isLoading) {
