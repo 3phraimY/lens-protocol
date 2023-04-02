@@ -32,6 +32,7 @@ export default function Home() {
 
   return (
     <div className={styles.container}>
+      
       {/* Iterate over the array of items inside the data field  */}
       <div className={styles.postsContainer}>
         {data?.explorePublications.items.map((publication) => (

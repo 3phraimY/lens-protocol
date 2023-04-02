@@ -21,6 +21,16 @@ export default function Create() {
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
+        
+
+        {/* Input for the title */}
+        <div className={styles.inputContainer}>
+          <input
+            type="text"
+            placeholder="Title"
+            onChange={(e) => setTitle(e.target.value)}
+          />
+        </div>
         {/* Input for the image */}
         <div className={styles.inputContainer}>
           <input
@@ -33,26 +43,17 @@ export default function Create() {
           />
         </div>
 
-        {/* Input for the title */}
-        <div className={styles.inputContainer}>
-          <input
-            type="text"
-            placeholder="Title"
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </div>
-
-        {/* Description */}
+        {/* Caption */}
         <div className={styles.inputContainer}>
           <textarea
-            placeholder="Description"
+            placeholder="Caption"
             onChange={(e) => setDescription(e.target.value)}
           />
         </div>
 
         {/* Content */}
-        <div className={styles.inputContainer}>
-          <textarea
+        <div className={styles.formContainerLarger}>
+          <textarea className={styles.inputContainerLarger}
             placeholder="Content"
             onChange={(e) => setContent(e.target.value)}
           />
@@ -72,7 +73,10 @@ export default function Create() {
             });
           }}
         >
+          <div>
           Create Post
+          </div>
+          
         </Web3Button>
       </div>
     </div>
